@@ -1,10 +1,15 @@
 import {v4 as uuidV4} from "uuid"
+import { useState } from "react";
+import toast from 'react-hot-toast'
 export default function MainPage() {
-
+const [roomId,setRoomId]=useState('');
+const [username,setUserName]=useState('');
 function CreateRoomId() {
   const id = uuidV4()
   console.log(id);
-  
+  setRoomId(id)
+toast.success("new room created")
+ 
 }
 
   return (
@@ -24,15 +29,24 @@ function CreateRoomId() {
           type="text"
           placeholder="Enter room ID"
           className="w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-white focus:ring-2 focus:ring-blue-500 mb-4 animate__animated animate__fadeInUp animate__delay-3s"
+          onChange={(e)=>{
+            e.target.value
+          }}
+          value={roomId}
         />
 
         <input
           type="text"
           placeholder="Username"
           className="w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-white focus:ring-2 focus:ring-blue-500 animate__animated animate__fadeInUp animate__delay-4s"
+          onChange={(e)=>{
+            e.target.value
+          }}
+          value={username}
         />
 
         <button className="mt-6 w-full py-2 rounded-lg bg-blue-600 hover:bg-blue-700 transition duration-300 text-white font-semibold animate__animated animate__pulse animate__infinite"
+
         >
           Get In
         </button>
