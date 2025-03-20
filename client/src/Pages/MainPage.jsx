@@ -1,6 +1,7 @@
 import {v4 as uuidV4} from "uuid"
 import { useState } from "react";
 import toast from 'react-hot-toast'
+import { useNavigate } from "react-router-dom";
 export default function MainPage() {
 const [roomId,setRoomId]=useState('');
 const [username,setUserName]=useState('');
@@ -12,6 +13,17 @@ toast.success("new room created")
  
 }
 
+const navigate = useNavigate()
+ const JoinRoom = ()=>{
+   if (!roomId || !username) {
+    toast.error("rooom id or username invalid")
+    return;
+   }
+
+navigate(`/snippet/${roomId}`,{
+  state:{username}
+})
+ }
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white animate__animated animate__fadeIn">
       <div className="bg-gray-800 p-8 rounded-2xl shadow-xl animate__animated animate__zoomIn animate__delay-1s">
@@ -42,11 +54,13 @@ toast.success("new room created")
           onChange={(e)=>{
             e.target.value
           }}
-          value={username}
+         
         />
 
         <button className="mt-6 w-full py-2 rounded-lg bg-blue-600 hover:bg-blue-700 transition duration-300 text-white font-semibold animate__animated animate__pulse animate__infinite"
-
+onClick={()=>{
+  JoinRoom()
+}}
         >
           Get In
         </button>

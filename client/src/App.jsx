@@ -1,6 +1,7 @@
 import { Toaster } from "react-hot-toast";
 import MainPage from "./Pages/MainPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SnippetPage from "./Pages/SnippetPage";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ position="top-right" >
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainPage />} />
-      </Routes>
+        <Route path="/snippet/:roomid" element={<SnippetPage />} />      </Routes>
     </BrowserRouter>
     </>
   );
