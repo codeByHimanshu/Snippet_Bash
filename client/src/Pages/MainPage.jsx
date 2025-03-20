@@ -9,6 +9,7 @@ function CreateRoomId() {
   const id = uuidV4()
   console.log(id);
   setRoomId(id)
+
 toast.success("new room created")
  
 }
@@ -52,9 +53,9 @@ navigate(`/snippet/${roomId}`,{
           placeholder="Username"
           className="w-full px-4 py-2 rounded-lg border border-gray-600 bg-gray-700 text-white focus:ring-2 focus:ring-blue-500 animate__animated animate__fadeInUp animate__delay-4s"
           onChange={(e)=>{
-            e.target.value
+            setUserName(e.target.value)
           }}
-         
+     
         />
 
         <button className="mt-6 w-full py-2 rounded-lg bg-blue-600 hover:bg-blue-700 transition duration-300 text-white font-semibold animate__animated animate__pulse animate__infinite"
