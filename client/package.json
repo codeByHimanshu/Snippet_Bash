@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@codemirror/lang-javascript": "^6.2.3",
+    "@monaco-editor/react": "^4.7.0",
     "@tailwindcss/vite": "^4.0.14",
     "@uiw/codemirror-theme-dracula": "^4.23.10",
     "@uiw/react-codemirror": "^4.23.10",
