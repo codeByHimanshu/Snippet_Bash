@@ -1,5 +1,6 @@
 import { useState } from "react";
 import LoggedUser from "../components/LoggedUser";
+import TextEditor from "../components/TextEditor";
 
 export default function SnippetPage() {
   const [user, setUser] = useState([
@@ -28,6 +29,7 @@ export default function SnippetPage() {
   
       <div className="w-9/10 p-6 bg-gray-900 shadow-lg rounded-lg animate__animated animate__fadeInRight h-full">
         <h1 className="text-2xl font-bold text-gray-800">Write your code here</h1>
+        <TextEditor />
       </div>
     </div>
   );
