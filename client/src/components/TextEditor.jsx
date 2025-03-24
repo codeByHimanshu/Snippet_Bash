@@ -23,7 +23,7 @@ const TextEditor = () => {
   return (
     <div className="p-4 bg-gray-900 rounded-lg shadow-md">
       <Editor
-        height="610px"
+             height="610px"
         defaultLanguage="javascript"
         defaultValue={code}
         theme="hc-black"
